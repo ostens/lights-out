@@ -1,7 +1,23 @@
 @import "../globalStyles.scss";
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5, $tile-size);
-  grid-gap: 1px;
+.game {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+
+  .title {
+    font-family: $montserrat;
+    font-size: $font-size-l;
+    font-weight: $bold;
+    margin-bottom: 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, $tile-size);
+    grid-gap: 1px;
+    margin-bottom: 20px;
+  }
 }
+

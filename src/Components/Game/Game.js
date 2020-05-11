@@ -26,11 +26,11 @@ export class Game extends React.Component {
     const numRows = this.state.numRows;
     const leftEdge = [0, 5, 10, 15, 20];
     const rightEdge = [4, 9, 14, 19];
-    const neighbors = [i, i+1, i-1, i+numRows, i-numRows];
+    const neighbors = [i, i + 1, i - 1, i + numRows, i - numRows];
     if (leftEdge.includes(i)) {
-      return neighbors.filter(neighbor => neighbor !== i-1);
+      return neighbors.filter(neighbor => neighbor !== i - 1);
     } else if (rightEdge.includes(i)) {
-      return neighbors.filter(neighbor => neighbor !== i+1);
+      return neighbors.filter(neighbor => neighbor !== i + 1);
     } else {
       return neighbors;
     }
@@ -49,6 +49,7 @@ export class Game extends React.Component {
 
     return (
       <div className="game">
+        <div className="title">Lights out</div>
         <div className="grid">
           <Board
             numRows={numRows}
