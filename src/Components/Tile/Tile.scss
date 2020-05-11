@@ -1,0 +1,21 @@
+@import "../globalStyles.scss";
+
+.tile {
+  font-family: $montserrat;
+  font-weight: $semi-bold;
+  font-size: $font-size-l;
+  border-color: $black;
+  float: left;
+  padding: 2px;
+  margin: 0px;
+  width: $tile-size;
+  height: $tile-size;
+}
+
+.lights-on {
+  background-color: $gold;
+}
+
+.lights-off {
+  background-color: $grey;
+}

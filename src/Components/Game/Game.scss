@@ -1,0 +1,7 @@
+@import "../globalStyles.scss";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, $tile-size);
+  grid-gap: 1px;
+}

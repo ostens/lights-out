@@ -1,0 +1,18 @@
+@import "../../globalStyles.scss";
+
+.button {
+  height: 36px;
+  width: 96px;
+  border-radius: 4px;
+  font-family: $montserrat;
+  font-weight: $semi-bold;
+  font-size: $font-size-xs;
+  background-color: $blue;
+  color: $black;
+  border: none;
+  outline: none;
+  margin: 8px;
+  &:disabled {
+    background-color: $grey;
+  }
+}

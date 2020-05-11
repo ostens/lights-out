@@ -1,0 +1,31 @@
+//fonts
+@import url("https://fonts.googleapis.com/css?family=Lora|Montserrat:300,400,600&display=swap");
+
+$montserrat: "Montserrat", sans-serif;
+
+$light: 300;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+
+$font-size-xxs: 12px;
+$font-size-xs: 14px;
+$font-size-s: 16px;
+$font-size-m: 18px;
+$font-size-l: 24px;
+
+//colors
+$white: #ffffff;
+$black: #000000;
+$blue: #6495ED;
+$grey: #D3D3D3;
+$gold: #FFD700;
+
+//page width
+@mixin page-width {
+  width: 100%;
+  max-width: 768px;
+}
+
+//dimensions
+$tile-size: 68px;
