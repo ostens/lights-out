@@ -8,7 +8,7 @@ export class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tiles: new Array(25).fill(true),
+      tiles: [...Array(25)].map(() => Math.random() <= 0.5),
       numRows: 5
     }
   }
@@ -38,22 +38,18 @@ export class Game extends React.Component {
 
   handleReset() {
     this.setState({
-      tiles: new Array(25).fill(false),
+      tiles: [...Array(25)].map(() => Math.random() <= 0.5),
     });
   }
 
   render() {
     const tiles = this.state.tiles;
-    const numRows = this.state.numRows;
-    const numCols = tiles.length / numRows;
 
     return (
       <div className="game">
         <div className="title">Lights out</div>
         <div className="grid">
           <Board
-            numRows={numRows}
-            numCols={numCols}
             tiles={tiles}
             onClick={(i) => this.handleClick(i)} />
         </div>
