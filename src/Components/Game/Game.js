@@ -23,7 +23,7 @@ export class Game extends React.Component {
   }
 
   handleBoundary(i) {
-    const numRows = this.state.numRows;
+    const { numRows } = this.state;
     const leftEdge = [0, 5, 10, 15, 20];
     const rightEdge = [4, 9, 14, 19];
     const neighbors = [i, i + 1, i - 1, i + numRows, i - numRows];
@@ -42,22 +42,28 @@ export class Game extends React.Component {
     });
   }
 
-  render() {
-    const tiles = this.state.tiles;
-
-    return (
-      <div className="game">
-        <div className="title">Lights out</div>
-        <div className="grid">
-          <Board
-            tiles={tiles}
-            onClick={(i) => this.handleClick(i)} />
-        </div>
-        <Button
-          onClick={() => this.handleReset()} />
-      </div>
-    );
+  calculateWin() {
+    const currentTiles = this.state.tiles.slice();
+    return currentTiles.includes(true) ? false : true;
   }
+
+render() {
+  const { tiles } = this.state;
+  const title = this.calculateWin() ? "You've won!" : "Lights out";
+
+  return (
+    <div className="game">
+      <div className="title">{title}</div>
+      <div className="grid">
+        <Board
+          tiles={tiles}
+          onClick={(i) => this.handleClick(i)} />
+      </div>
+      <Button
+        onClick={() => this.handleReset()} />
+    </div>
+  );
+}
 }
 
 export default Game;
