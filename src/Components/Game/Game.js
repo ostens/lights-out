@@ -3,12 +3,13 @@ import React from "react";
 import Board from "../Board/Board";
 import "./Game.scss";
 import Button from "../StyledComponents/Button/Button";
+import { randomTiles } from "./GameUtils";
 
 export class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tiles: [...Array(25)].map(() => Math.random() <= 0.5),
+      tiles: randomTiles(),
       numRows: 5
     }
   }
@@ -38,7 +39,7 @@ export class Game extends React.Component {
 
   handleReset() {
     this.setState({
-      tiles: [...Array(25)].map(() => Math.random() <= 0.5),
+      tiles: randomTiles(),
     });
   }
 
